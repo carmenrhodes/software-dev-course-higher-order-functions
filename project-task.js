@@ -95,6 +95,18 @@ const discountedProducts = products.map(tenPercentOff);
 
 console.log("Discounted Products (10% off):", discountedProducts);
 
+/* Alternate solution from IA group
+function applyDiscount(discount) {
+  return function(products) {
+    return product.price * (1 - discount);
+  }
+}
+
+const discount10 = applyDiscount(0.1);
+const discountProducts - electronicProducts.map((product) => ({...product, price: discount10(product)}));
+
+console.log(discountProducts);
+
 /*
 🔹 Task 4: Calculate Total Inventory Value
 
@@ -105,7 +117,7 @@ Step-by-Step:
 2. Add only the prices of products where `inStock` is true.
 3. Store the total in a new variable.
 */
-let inStockInventoryTotal = products.reduce(function(total, product) {
+const inStockInventoryTotal = products.reduce(function(total, product) {
   if (product.inStock) {
     return total + product.price;
   }
@@ -113,6 +125,14 @@ let inStockInventoryTotal = products.reduce(function(total, product) {
 }, 0);
 
 console.log(inStockInventoryTotal);
+
+/* Alternate solution from IA group
+const totalValue = electronicProducts
+.filter((products) => products.inStock)
+.reduce((total, products) => total + products.price, 0);
+
+console.log(totalValue);
+*/
 
 // ============================================in
 // 🧪 Console Test Your Work
